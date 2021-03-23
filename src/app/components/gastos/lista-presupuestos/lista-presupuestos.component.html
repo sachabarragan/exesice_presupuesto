@@ -1,0 +1,18 @@
+<div class="row">
+    <div class="col-6">
+        <div class="card-header verde">
+            Presupuesto: $ {{ presupuesto }}
+        </div>
+    </div>
+    <div class="col-6">
+        <div class="card-header" [ngClass]="_presupuesto.clase">
+            Le restan: $ {{ _presupuesto.restan }}
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12 mt-3 d-flex justify-content-between p-3" *ngFor="let gasto of _presupuesto.items">
+        <span>{{ gasto.nombre }}</span> <span>$ {{ gasto.monto }}</span>
+    </div>
+</div>

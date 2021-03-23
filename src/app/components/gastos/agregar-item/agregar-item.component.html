@@ -1,0 +1,15 @@
+<form>
+    <div class="mb-3">
+      <label for="gasto" class="form-label">Agregar gasto</label>
+      <input type="text" class="form-control" id="gasto" aria-describedby="gastoHelp" [(ngModel)]="item.nombre" [ngModelOptions]="{standalone: true}">
+      <div id="gastoHelp" class="form-text">Agrega un gasto para descontar de su presupuesto.</div>
+      <div class="error text-danger" *ngIf="_presupuesto.nombreVacio">Tiene que completar este campo.</div>
+    </div>
+    <div class="mb-3">
+      <label for="valor" class="form-label">Valor</label>
+      <input type="number" class="form-control" id="valor" [(ngModel)]="item.monto" [ngModelOptions]="{standalone: true}">
+      <div class="error text-danger" *ngIf="_presupuesto.montoVacio">Tiene que ingresar un monto.</div>
+      <div class="error text-danger" *ngIf="_presupuesto.noMas">Su presupuesto no le alcanza para más.</div>
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="agregarGasto()">Agregar</button>
+</form>

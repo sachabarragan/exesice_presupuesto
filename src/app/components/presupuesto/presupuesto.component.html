@@ -1,0 +1,10 @@
+<form class="formulario">
+    <div class="mb-3">
+      <label for="presupuesto" class="form-label">Ingrese su presupuesto</label>
+      <input type="number" class="form-control" id="presupuesto" aria-describedby="emailHelp" [(ngModel)]="presupuesto" [ngModelOptions]="{standalone: true}">
+      <div id="presupuestolHelp" class="form-text">Ingrese el presupuesto con el que cuenta.</div>
+      <div class="bg-danger p-2" *ngIf="!presupuestoValido">El presupuesto debe ser mayor a $ 0</div>
+    </div>
+
+    <button type="submit" class="btn btn-primary" (click)="guardarPresupuesto()">Enviar</button>
+</form>
